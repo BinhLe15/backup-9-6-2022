@@ -1,3 +1,13 @@
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root, .mainLayout, .ant-layout{
+  width: 100%;
+  height: 100%;
+}
 .site-calendar-demo-card {
   width: 400px;
   border: 1px solid #f0f0f0;
@@ -12,7 +22,7 @@
 }
 
 #components-layout-demo-custom-trigger .trigger:hover {
-  color: #1890ff;
+  color: #b70a12;
 }
 
 #components-layout-demo-custom-trigger .logo {
@@ -25,86 +35,572 @@
   background: #fff;
 }
 
-/* Rectangle 1625 */
-
-
-.Rectangle-1625 {
-  position: absolute;
-  width: 264px;
-  height: 58px;
-  left: 22px;
-  top: 81px;
-
-  background: #CB002B;
-  border-radius: 30px 0px 0px 30px;
-}
-/* Quản lý vai trò */
-
-/* .line-149{
-  position: absolute;
-  width: 286px;
-  height: 0px;
-  left: 0px;
-  top: 146px;
-
-  background: #C4C4C4;
-  border: 1px solid #C9C9C9;
-}
-
-.group-2565{
-  position: absolute;
-  left: 1.6%;
-  right: 96.74%;
-  top: 6.86%;
-  bottom: 91.46%;
-}
-
-.role-manage{
-  position: absolute;
-  width: 190px;
-  height: 23px;
-  left: 54px;
-  top: 224px;
-
-  font-family: 'Sarabun';
-  font-style: normal;
-  font-weight: 700;
+/* /* 
+general 
+-------
+*/
+body {
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
 }
 
-.or-150{
-  color: #FFFFFF;
+.container-fluid {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 15px;
 }
 
-.participant-manage{
+.ant-layout {
+  background: #fff !important;
+}
+
+.mainLayout .ant-layout-header {
+  background: #f8f8f8;
+  padding: 0;
+  height: auto;
+  line-height: 1.6;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.bgGray {
+  background: #fafafa;
+}
+
+/* 
+title holder
+------------
+*/
+.titleHolder {
+  text-align: center;
+  position: relative;
+  padding: 0 0 20px;
+  margin: 0 0 40px;
+}
+
+.titleHolder:after {
+  transform: translateX(-50%);
+  content: '';
+  background: #b60e1a;
   position: absolute;
-  width: 220px;
-  height: 23px;
-  left: 54px;
-  top: 165px;
+  bottom: 0;
+  left: 50%;
+  height: 3px;
+  width: 50px;
+}
 
-  font-family: 'Sarabun';
-  font-style: normal;
+.titleHolder h2 {
+  font-size: 28px;
+  margin: 0;
+}
+
+/* 
+header
+------ 
+*/
+.ant-layout-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.header .logo {
+  font-size: 22px;
+  text-transform: uppercase;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
 }
 
-.event-manage{
+.header .logo .fas {
+  color: #1890ff;
+  margin: 0 5px 0 0;
+  font-size: 28px;
+}
+
+.header .logo a {
+  color: #333;
+}
+
+.header .ant-anchor-wrapper {
+  background: none;
+}
+
+.header .ant-anchor {
+  display: flex;
+}
+
+.header .ant-anchor-ink {
+  display: none;
+}
+
+.header .ant-anchor-link {
+  padding: 0 20px;
+  line-height: 1.4;
+  position: relative;
+}
+
+.header .ant-anchor-link:before,
+.header .ant-anchor-link:after {
+  content: '';
+  background: #b01c30;
+  width: 1px;
   position: absolute;
-  width: 190px;
-  height: 23px;
-  left: 54px;
-  top: 98px;
-
-  font-family: 'Sarabun';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
+  top: 2px;
+  bottom: 2px;
+  left: 30%;
+  opacity: 0;
+  transition: all 0.3s linear;
 }
 
-.or-150{
+.header .ant-anchor-link:after {
+  left: auto;
+  right: 30%;
+}
+
+.header .ant-anchor-link.ant-anchor-link-active:before,
+.header .ant-anchor-link:hover:before {
+  left: 5%;
+  opacity: 1;
+}
+
+.header .ant-anchor-link.ant-anchor-link-active:after,
+.header .ant-anchor-link:hover:after {
+  right: 5%;
+  opacity: 1;
+}
+
+
+/* ant menu */
+
+
+
+.header .ant-menu li.ant-menu-item:before,
+.header .ant-menu li.ant-menu-item:after {
+  content: '';
+  background: #1890ff;
+  width: 1px;
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 30%;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
+.header .ant-menu li.ant-menu-item:after {
+  left: auto;
+  right: 30%;
+}
+
+.header .ant-menu li.ant-menu-item,
+.header .ant-menu li.ant-menu-item-selected {
+  border: 0 !important;
+}
+
+.header .ant-menu li.ant-menu-item-selected,
+.header .ant-menu li.ant-menu-item:hover {
+  color: #1890ff;
+  background: none;
+}
+
+.header .ant-menu li.ant-menu-item-selected:before,
+.header .ant-menu li.ant-menu-item:hover:before {
+  left: 5%;
+  opacity: 1;
+}
+
+.header .ant-menu li.ant-menu-item-selected:after,
+.header .ant-menu li.ant-menu-item:hover:after {
+  right: 5%;
+  opacity: 1;
+}
+
+
+/* 
+hero
+---- 
+*/
+.heroBlock {
+  background: url('assets/images/bg-hero.jpg') no-repeat;
+  background-position: 50% 100%;
+  background-size: cover;
+  height: 100vh;
+}
+
+.heroBlock .container-fluid {
+  display: block !important;
+}
+
+.heroBlock .ant-carousel,
+.heroBlock .ant-carousel div {
+  height: 100%;
+}
+
+.heroBlock .slick-dots li button {
+  background: #000 !important;
+}
+
+.heroBlock .slick-dots li.slick-active button {
+  background: #c21313 !important;
+}
+
+.heroBlock .content {
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0 70px;
+}
+
+.heroBlock h3 {
+  font-size: 30px;
+  line-height: 1.2;
+  margin: 0 0 30px;
+}
+
+.heroBlock p {
+  margin: 0 0 30px;
+}
+
+.heroBlock .btnHolder {
+  height: auto !important;
+}
+
+.heroBlock .btnHolder button,
+.heroBlock .btnHolder .fas {
+  margin: 0 10px 0 0;
+}
+
+/* 
+block
+----- 
+*/
+.block {
+  padding: 60px 0;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+/* 
+about
+----- 
+*/
+.aboutBlock .contentHolder {
+  text-align: center;
+  margin: 0 0 50px;
+}
+
+.aboutBlock .icon {
+  font-size: 40px;
+  color: #bc0e1d;
+  margin: 0 0 10px;
+}
+
+.aboutBlock .content {
+  text-align: center;
+}
+
+/* 
+how it works
+------------
+*/
+.worksBlock {
+  background: url('assets/images/bg-works.jpg') no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  position: relative;
+}
+
+.worksBlock:before {
+  content: '';
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.worksBlock h2 {
+  color: #fff;
+}
+
+.worksBlock .contentHolder {
+  text-align: center;
+}
+
+.worksBlock .contentHolder button {
+  font-size: 40px;
+  line-height: 1;
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 30px;
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
+}
+
+/* 
+faqs
+----
+*/
+.faqBlock .ant-collapse {
+  margin: 0 0 40px;
+}
+
+.faqBlock .quickSupport {
+  text-align: center;
+  max-width: 740px;
+  margin: auto;
+}
+
+.faqBlock .fas {
+  margin: 0 10px 0 0;
+}
+
+/* 
+pricing block
+-------------
+*/
+.pricingBlock .ant-list {
+  text-align: center;
+}
+
+.pricingBlock .ant-row > div:nth-child(2) .ant-list-item {
+  box-shadow: 0 0 12px 2px #f3f3f3;
+  transform: scale(1.1);
+  position: relative;
+  z-index: 1;
+}
+
+.pricingBlock .ant-card-head-title {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.pricingBlock .large {
+  font-size: 38px;
+  line-height: 1;
+  margin: 0 0 20px;
+}
+
+.pricingBlock .fab {
+  margin: 0 10px 0 0;
+}
+
+/* 
+contact
+-------
+*/
+.contactBlock .ant-form {
+  max-width: 640px;
+  margin: auto;
+}
+
+.contactBlock .ant-form textarea {
+  min-height: 120px;
+  height: 120px;
+}
+
+/*
+sider
+-----
+*/
+.ant-layout-sider-children {
+  height: 100%;
+  margin-top: -0.1px;
+  padding-top: 0.1px;
+  background: white;
+}
+
+/* 
+footer
+------
+*/
+.ant-layout-footer {
+  background: #fff !important;
+  color: rgb(11, 5, 5) !important;
+  padding: 20px 0 !important;
+  text-align: center;
+}
+
+.footer .logo {
+  font-size: 22px;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+
+.footer .fas {
+  color: #1890ff;
+  font-size: 28px;
+  margin: 0 5px 0 0;
+}
+
+.footer .logo a {
+  color: #fff;
+}
+
+.footer .socials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 24px;
+}
+
+.footer .socials li {
+  margin: 0 20px;
+}
+
+.footer .socials a {
+  color: #fff;
+}
+
+.footer .socials a:hover {
+  color: #1890ff;
+}
+
+.footer .goTop:hover {
+  opacity: 0.7;
+}
+
+.mobileVisible {
+  display: none;
+}
+
+.mobileHidden {
+  display: block;
+}
+
+/* 
+responsive
+----------
+*/
+@media only screen and (max-width: 991px) {
+  .pricingBlock .ant-row > div:nth-child(2) .ant-list-item {
+    transform: scale(1.14);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .pricingBlock .ant-row > div:nth-child(2) .ant-list-item {
+    transform: scale(1);
+  }
+
+  .mobileVisible {
+    display: block;
+  }
+  
+  .mobileHidden {
+    display: none;
+  }
+}
+
+
+#components-layout-demo-top-side-2 .logo {
+  float: left;
+  width: 120px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.ant-row-rtl #components-layout-demo-top-side-2 .logo {
+  float: right;
+  margin: 16px 0 16px 24px;
+}
+
+/* Mine */
+.site-layout-background {
+  background: #fff;
+} 
+
+.ant-layout-header.header{
+  background-color  :#fff;
+}
+
+.header .ant-menu-light .ant-menu-item:hover, 
+.header .ant-menu-light .ant-menu-item-active, 
+.header .ant-menu-light .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open, 
+.header .ant-menu-light .ant-menu-submenu-active, 
+.header .ant-menu-light .ant-menu-submenu-title:hover {
+  color: #CB002B;
+}
+.ant-menu-item-selected{
+  background-color: #CB002B !important;
+}
+.ant-menu-item-selected span{
+  color: white !important ;
+}
+.ant-menu-item.ant-menu-item-selected:hover span{
+  color: white ;
+}
+.ant-menu-item:hover span{
+  color: #CB002B ;
+}
+.ant-menu-item.ant-menu-selected{
+  color:#f3f3f3 !important;
+}
+.ant-menu-item.ant-menu-item-active{
+  color: #CB002B !important;
+}
+.ant-menu-item-selected>.ant-menu-item-icon{
+  color: #fff;
+}
+.ant-layout-sider-children{
+  background-color: #EEEEEE !important;
+}
+.ant-menu-root.ant-menu-inline{
+  background-color: #EEEEEE;
+}
+.ant-menu-root.ant-menu-inline.ant-menu-light{
   color: #44494D;
-} */
+}
+.ant-layout-content.site-layout-background{
+  background-color: #707070;
+}
+.ant-col.an-col-10{
+  padding-left: 45px;
+}
+.ant-breadcrumb-link{
+  color: #fff !important;
+}
+.ant-breadcrumb-separator{
+  color: #fff !important;
+}
+.ant-breadcrumb{
+  margin-top: -20px !important;
+}
+.ant-btn-primary{
+  border: red !important;
+}
+#root{
+  height: fit-content !important;
+}
+.ant-menu.ant-menu-light{
+  position: fixed;
+  width: 275px;
+  padding-top: 10px;
+}
+.ant-select-selector{
+  height: 50 !important;
+}
+.ant-select-single:not(.ant-select-customize-input) .ant-select-selector{
+  height: 50px;
+}
