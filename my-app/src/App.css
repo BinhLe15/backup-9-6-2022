@@ -1,0 +1,110 @@
+.site-calendar-demo-card {
+  width: 400px;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+}
+#components-layout-demo-custom-trigger .trigger {
+  padding: 0 24px;
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#components-layout-demo-custom-trigger .trigger:hover {
+  color: #1890ff;
+}
+
+#components-layout-demo-custom-trigger .logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+
+/* Rectangle 1625 */
+
+
+.Rectangle-1625 {
+  position: absolute;
+  width: 264px;
+  height: 58px;
+  left: 22px;
+  top: 81px;
+
+  background: #CB002B;
+  border-radius: 30px 0px 0px 30px;
+}
+/* Quản lý vai trò */
+
+/* .line-149{
+  position: absolute;
+  width: 286px;
+  height: 0px;
+  left: 0px;
+  top: 146px;
+
+  background: #C4C4C4;
+  border: 1px solid #C9C9C9;
+}
+
+.group-2565{
+  position: absolute;
+  left: 1.6%;
+  right: 96.74%;
+  top: 6.86%;
+  bottom: 91.46%;
+}
+
+.role-manage{
+  position: absolute;
+  width: 190px;
+  height: 23px;
+  left: 54px;
+  top: 224px;
+
+  font-family: 'Sarabun';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.or-150{
+  color: #FFFFFF;
+}
+
+.participant-manage{
+  position: absolute;
+  width: 220px;
+  height: 23px;
+  left: 54px;
+  top: 165px;
+
+  font-family: 'Sarabun';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.event-manage{
+  position: absolute;
+  width: 190px;
+  height: 23px;
+  left: 54px;
+  top: 98px;
+
+  font-family: 'Sarabun';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.or-150{
+  color: #44494D;
+} */
